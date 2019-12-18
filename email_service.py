@@ -131,8 +131,6 @@ class Email:
         cur_dict = copy.deepcopy(self.__dict__)
         cur_dict['to'] = cur_dict.pop('to_addr')
         cur_dict['from'] = cur_dict.pop('from_addr')
-        print(self.__dict__)
-        print(cur_dict)
         return cur_dict
 
     def send_email(self):
@@ -151,7 +149,6 @@ class Email:
             )
 
         elif EMAIL_PROVIDER == "SENDGRID":
-            print("Here!")
             message = Mail(
                 from_email = self.from_addr,
                 to_emails = self.to_addr,
